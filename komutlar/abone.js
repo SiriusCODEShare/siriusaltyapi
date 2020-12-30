@@ -4,7 +4,7 @@ exports.run = async (client, message, args) => {
   
   const codeworkabone = await db.fetch(`abonek_${message.guild.id}`)
   
-    if(codeworkabone == null) return message.channel.send('');
+  if(codeworkabone == null) return message.channel.send('');
   if (message.channel.id !== codeworkabone) return message.channel.send(`Bu Komutu Sadece ${codeworkabone} Kanalında Kullanabilirsiniz!`);
   if (codeworkabone == true) return; 
   if (codeworkabone == false) return message.channel.send(`Bu Sunucuda Abone Sistemi Aktif Edilmemiş.`);
