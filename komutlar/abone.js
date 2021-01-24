@@ -14,14 +14,14 @@ exports.run = async (client, message, args) => {
  }
   let user = message.mentions.members.first()
    if (!user) return message.reply('Kime Rol Verceğimi Yazmadın!').catch(console.error);
-   if (user.roles.cache.has(db.fetch(`abonerolü_${message.guild.id}`))) return message.channel.send("Bu Kullanıcıda Zaten Abone Rolü Var!")
+   if (user.roles.cache.has(db.fetch(`abonerolü_${message.guild.id}`))) return message.channel.send("Bu Kullanıcıda Zaten Müzisyen Rolü Var!")
   user.roles.add(db.fetch(`abonerolü_${message.guild.id}`))
   const embed = new Discord.MessageEmbed()
   .setColor('RED')
   .setTimestamp()
-  .setFooter('CodeWork Her Daim Daha İleriye!')
-  .addField(`Abone Rolü Alan Kullanıcı;`, `${user}`,true)
-  .addField(`Abone Rolü Veren Yetkili;`,`${message.author}`,true)
+  .setFooter('Sirius')
+  .addField(`Müzisyen Rolü Alan Kullanıcı;`, `${user}`,true)
+  .addField(`Müzisyen Rolü Veren Yetkili;`,`${message.author}`,true)
       message.channel.send(embed)
   db.add(`aboneistatistik${message.author.id}.${message.guild.id}`, 1)
 }
@@ -33,7 +33,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "abone",
-  description: "Abone Rolü Verir!",
-  usage: "abone"
+  name: "müzisyen",
+  description: "Müzisyen Rolü Verir!",
+  usage: "müzisyen"
 };

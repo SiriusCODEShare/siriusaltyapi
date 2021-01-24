@@ -24,7 +24,7 @@ client.on('ready', async () => {
   
  client.user.setActivity(`discord.gg/codework`, { type:'WATCHING' })
   
-  console.log("CodeWork Akıyor!!")
+  console.log("CSirius ♥ Havuç")
 });
 
 const log = message => {
